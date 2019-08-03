@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Utils from '~/utils'
-import ReactMarkdown from 'react-markdown-it'
+import ReactMarkdown from 'react-markdown'
 import {Button, FormatDate, Card } from '~/components'
 import classnames from 'classnames'
 
