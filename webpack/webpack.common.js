@@ -2,58 +2,30 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
 
-const npmPackages = [
-  "sweetalert2",
-  "moment",
-  "moment-timezone",
-  "classnames",
-  "react-markdown-it"
-];
-
-const corePackages = [
-  "react",
-  "redux",
-  "redux-thunk",
-  "react-redux",
-  "react-dom",
-  "history",
-  "qs",
-  "axios",
-  "push.js",
-  "lodash",
-  "universal-cookie",
-  "node-waves",
-  "connected-react-router",
-]
-
-const babelrc = require(resolve(__dirname, './babel.config.js'))
+const babelrc = require(resolve(__dirname, '../babel.config.js'))
 
 module.exports = {
-  context: resolve(__dirname, './src/'),
+  context: resolve(__dirname, '../src/'),
   entry: {
-    core: corePackages,
-    main: [resolve(__dirname, './src/Root.js')],
-    plugins: npmPackages,
+    main: resolve(__dirname, '../src/Root.js'),
   },
   output: {
-    path: __dirname + '/dist/',
+    path: resolve(__dirname, '../dist/'),
     publicPath: '/',
     filename: '[name].[hash].js',
     sourceMapFilename: '[name].[hash].map',
-    chunkFilename: '[id].[hash].js'
+    chunkFilename: '[name].[id].[hash].js'
   },
-  // devtool: 'cheap-eval-source-map',
-  // devtool: 'eval',
-  mode: 'development',
-  devtool: 'eval-source-map',
   resolve: {
-    modules: [resolve(__dirname, './node_modules/')],
+    modules: [resolve(__dirname, '../node_modules/')],
     alias: {
-      '~': resolve(__dirname, "./src/"),
-      '!': resolve(__dirname, "./assets/"),
-      'less': resolve(__dirname, "./src/less"),
-      'img': resolve(__dirname, "./assets/img"),
+      '~': resolve(__dirname, "../src/"),
+      '!': resolve(__dirname, "../assets/"),
+      'less': resolve(__dirname, "../src/less"),
+      'img': resolve(__dirname, "../assets/img"),
     }
   },
   module: {
@@ -68,16 +40,9 @@ module.exports = {
               presets: [
                 '@babel/preset-env',
               ],
-              cwd: resolve(__dirname),
+              cwd: resolve(__dirname, '../'),
             }
           },
-          // {
-          //   loader: 'eslint-loader',
-          //   options: {
-          //     formatter: require('eslint-friendly-formatter')
-          //     // formatter: require('eslint/lib/formatters/codeframe')
-          //   }
-          // }
         ]
       },
       {
@@ -85,6 +50,15 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
+          },
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it uses publicPath in webpackOptions.output
+              // publicPath: '../',
+              hmr: process.env.NODE_ENV === 'development',
+            },
           },
           {
             loader: 'css-loader',
@@ -107,6 +81,12 @@ module.exports = {
             loader: 'style-loader',
           },
           {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
+          {
             loader: 'css-loader',
             options: {
               sourceMap: true
@@ -117,7 +97,7 @@ module.exports = {
             options: {
               sourceMap: true
             }
-          }
+          },
         ]
       },
       {
@@ -130,20 +110,18 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new MiniCssExtractPlugin({
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+    }),
+  ],
   optimization: {
     splitChunks: {
       chunks: 'all',
     },
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Webplatform',
-      template: '../template.html',
-      favicon:'../assets/img/favicon.ico',
-      chunksSortMode: 'none'
-    }),
-    new webpack.NamedModulesPlugin(),
-  ],
   performance: {
     hints: false
   },
