@@ -1,6 +1,3 @@
-import * as Core from './Core'
-import * as UI from './components'
-import Actions from './actions'
 import Utils from './utils'
 import Reducers from './reducers'
 
@@ -12,9 +9,10 @@ import '../assets/less/inc/vendor-overrides/bootstrap-grid.less'
 import '../assets/less/inc/autocomplete.less'
 
 export {
-  ...UI,
-  ...Core,
-  Actions: Actions,
-  Utils: Utils,
-  Reducers: Reducers
+  Utils, 
+  Reducers
 }
+
+export * from './Core'
+export * from './components'
+export * from './actions'

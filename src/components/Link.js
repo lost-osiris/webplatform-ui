@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import History from '~/components/Core/History'
+import History from '~/Core/History'
 // import invariant from 'invariant'
 
 const isModifiedEvent = (event) =>

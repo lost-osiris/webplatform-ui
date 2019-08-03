@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import {
   Loading,
   ConnectedUI,
-} from '~/components'
+} from '~/Core'
 import Utils from '~/utils'
 
 import SideNav from './SideNav'

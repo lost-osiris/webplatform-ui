@@ -80,7 +80,7 @@ class TopNav extends Component {
         </div>
         <div className="header__logo">
           <h1>
-            <Link to='/'>CEE-Tools</Link>
+            <Link to='/'>Webplatform</Link>
           </h1>
         </div>
         { this.props.search }

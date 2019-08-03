@@ -15,10 +15,14 @@ export { default as UserAutocomplete } from './UserAutocomplete'
 export { default as WithScroll } from './WithScroll'
 export { default as DataField } from './DataField'
 export { default as Label } from './Label'
-export { Layout as Layout } from './Layout'
+export { 
+  Layout as Layout, 
+  TopNavSearch as TopNavSearch, 
+  NavSubMenu as NavSubMenu 
+} from './Layout'
 
 import * as Debug from './Debug'
-export { ...Debug } 
+export { Debug } 
 
 import * as Inputs from './Inputs'
 export { Inputs } 

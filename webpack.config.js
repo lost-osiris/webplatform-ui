@@ -2,7 +2,6 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DevServerConf = require('./webpack.devServer.js')
 
 const npmPackages = [
   "sweetalert2",
@@ -138,7 +137,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'CEE-Tools',
+      title: 'Webplatform',
       template: '../template.html',
       favicon:'../assets/img/favicon.ico',
       chunksSortMode: 'none'
@@ -147,5 +146,5 @@ module.exports = {
   ],
   performance: {
     hints: false
-  }
+  },
 }

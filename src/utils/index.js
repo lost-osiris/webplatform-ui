@@ -1,7 +1,7 @@
 import store from './store'
 import Api from './Api'
 import matchPath from './matchPath'
-import History from '~/components/Core/History'
+import History from '~/Core/History'
 
 Object.defineProperty(String.prototype, 'replaceAll', {
   writeable: false,

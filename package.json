@@ -1,6 +1,6 @@
 {
   "name": "webplatform-ui",
-  "version": "1.1.1",
+  "version": "1.0.1",
   "description": "A CLI to bootstrap the web platform frontend",
   "main": "src/index.js",
   "dependencies": {
@@ -25,6 +25,7 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-3": "^7.0.0",
     "@babel/runtime": "^7.5.5",
     "@babel/runtime-corejs2": "^7.0.0",
     "arg": "^4.1.0",
@@ -96,19 +97,21 @@
     "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
-    "start": "webpack --config webpack.config.js",
-    "build": "webpack --config webpack.config.dev.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "scripts/start",
+    "build": "scripts/build"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:lost-osiris/webplatform-ui.git"
+    "url": "git@github.com/lost-osiris/webplatform-ui.git"
   },
   "publishConfig": {
     "access": "public"
   },
   "keywords": [
     "cli",
-    "webplatform-frontend"
+    "webplatform-frontend",
+    "webplatform-ui"
   ],
   "author": "Matthew Owens",
   "license": "MIT"
