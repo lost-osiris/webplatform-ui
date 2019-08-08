@@ -1,11 +1,8 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
-
-const babelrc = require(resolve(__dirname, '../babel.config.js'))
 
 module.exports = {
   context: resolve(__dirname, '../src/'),
@@ -22,9 +19,12 @@ module.exports = {
   resolve: {
     modules: [resolve(__dirname, '../node_modules/')],
     alias: {
+      'utils': resolve(__dirname, '../src/utils/index.js'),
+      'reducers': resolve(__dirname, '../src/reducers/index.js'),
+      'actions': resolve(__dirname, '../src/actions/index.js'),
       '~': resolve(__dirname, "../src/"),
       '!': resolve(__dirname, "../assets/"),
-      'less': resolve(__dirname, "../src/less"),
+      'less': resolve(__dirname, "../assets/less"),
       'img': resolve(__dirname, "../assets/img"),
     }
   },
@@ -33,12 +33,24 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
+        type: 'javascript/esm',
         use: [
           {
             loader: 'babel-loader',
             options: {
               presets: [
-                '@babel/preset-env',
+                [
+                  '@babel/preset-env',
+                  {
+                    // "modules": false
+                    // targets: {
+                    //   esmodules: true
+                    // }
+                  }
+                    // {
+                  //   "modules": false
+                  // }
+                ]
               ],
               cwd: resolve(__dirname, '../'),
             }
@@ -112,10 +124,6 @@ module.exports = {
   },
   plugins: [
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-    }),
   ],
   optimization: {
     splitChunks: {

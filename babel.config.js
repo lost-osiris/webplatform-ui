@@ -8,7 +8,8 @@ module.exports = {
         [
           "@babel/plugin-transform-runtime",
           {
-            absoluteRunetime: true,
+            // absoluteRunetime: true,
+            // "modules": false
           }
         ],
         [
@@ -22,7 +23,14 @@ module.exports = {
     },
     production: {
       plugins: [
-        "transform-runtime"
+        [
+          "transform-runtime",
+          {
+            // absoluteRunetime: true,
+            "modules": 'umd' 
+          }
+        ],
+        
       ]
     }
   }

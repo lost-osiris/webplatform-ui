@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -27,34 +26,41 @@ const corePackages = [
   "history",
   "qs",
   "axios",
-  "push.js",
+  // "push.js",
   "lodash",
   "universal-cookie",
   "node-waves",
-  "connected-react-router",
+  // "connected-react-router",
 ]
 
 module.exports = merge(common, {
-  entry: {
-    core: corePackages,
-    main: resolve(__dirname, '../src/index.js'),
-    plugins: npmPackages,
-    moment: ['moment', 'moment-timezone']
-  },
+  entry: resolve(__dirname, '../src/index.js'),
+  // entry: {
+    // core: corePackages,
+    // main: resolve(__dirname, '../src/index.js'),
+    // plugins: npmPackages,
+    // moment: ['moment', 'moment-timezone']
+  // },
   output: {
-    path: resolve(__dirname, '../build/'),
-    filename: 'index.js',
-    library: pkg.name,
-    libraryTarget: 'commonjs2'
+    path: resolve(__dirname, '../dist/'),
+    filename: 'webplatform-ui.js',
+    library: 'webplatform',
+    // library: {
+    //   root: 'webplatform-ui',
+    //   amd: 'webplatform-ui',
+    //   commonjs: 'webplatform-ui',
+    // },
+    libraryTarget: 'commonjs2',
   },
-  mode: 'production',
-  devtool: 'source-map',
-  optimization: {
-    minimizer: [
-      new TerserJSPlugin({}), 
-      new OptimizeCSSAssetsPlugin({})
-    ],
-  },
+  // mode: 'production',
+  mode: 'development',
+  // devtool: 'source-map',
+  // optimization: {
+  //   minimizer: [
+  //     new TerserJSPlugin({}), 
+  //     new OptimizeCSSAssetsPlugin({})
+  //   ],
+  // },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
@@ -62,24 +68,26 @@ module.exports = merge(common, {
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
     }),
     new webpack.NamedModulesPlugin(),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
   performance: {
     hints: false
   },
   externals: {
+    // 'react': 'React',
+    // 'react-dom': 'ReactDOM'
     // Don't bundle react or react-dom
-    react: {
-      commonjs: "react",
-      commonjs2: "react",
-      amd: "React",
-      root: "React"
-    },
-    "react-dom": {
-      commonjs: "react-dom",
-      commonjs2: "react-dom",
-      amd: "ReactDOM",
-      root: "ReactDOM"
-    }
+    // react: {
+    //   commonjs: "react",
+    //   commonjs2: "react",
+    //   amd: "React",
+    //   root: "React"
+    // },
+    // "react-dom": {
+    //   commonjs: "react-dom",
+    //   commonjs2: "react-dom",
+    //   amd: "ReactDOM",
+    //   root: "ReactDOM"
+    // }
   }
 })

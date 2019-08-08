@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const npmPackages = [
@@ -24,11 +23,11 @@ const corePackages = [
   "history",
   "qs",
   "axios",
-  "push.js",
+  // "push.js",
   "lodash",
   "universal-cookie",
   "node-waves",
-  "connected-react-router",
+  // "connected-react-router",
 ]
 
 module.exports = merge(common, {
