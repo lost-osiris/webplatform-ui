@@ -1,6 +1,6 @@
 {
   "name": "webplatform-ui",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "lib/webplatform-ui.js",
   "module": "es/webplatform-ui.js",
   "unpkg": "dist/webplatform-ui.js",
