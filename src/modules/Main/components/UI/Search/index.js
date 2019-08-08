@@ -1,2 +1,1 @@
-const Default = () => import('./Main')
-export { Default }
+export { default as Default } from './Main'

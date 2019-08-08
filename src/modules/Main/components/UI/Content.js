@@ -1,2 +1,1 @@
-const Home = () => import('../Views/Home')
-export { Home }
+export { default as Home } from '../Views/Home'

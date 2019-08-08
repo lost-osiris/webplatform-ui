@@ -28,7 +28,7 @@ export default class UserAutocomplete extends Component {
   render() {
 
     return (
-      <Inputs.ApiAutocomplete
+      <Inputs.Autocomplete
         placeholder="Enter UID"
         minSearch={3}
         api={'users.search'}

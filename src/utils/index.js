@@ -1,7 +1,6 @@
-import store from './store'
+import store, { history } from './store'
 import Api from './Api'
 import matchPath from './matchPath'
-import History from '~/Core/History'
 
 Object.defineProperty(String.prototype, 'replaceAll', {
   writeable: false,
@@ -29,7 +28,7 @@ let formInitError = false
 let formIdError = false
 let formNameError = false 
 
-class Utils {
+export default class Utils {
   constructor(reducer=null) {
     this.store = store
     this.api = new Api(store)
@@ -229,24 +228,22 @@ class Utils {
   }
 
   go(...args) {
-    History.go(...args)
+    history.go(...args)
   }
 
   goBack(...args) {
-    History.goBack(...args)
+    history.goBack(...args)
   }
 
   goForward(...args) {
-    History.goForward(...args)
+    history.goForward(...args)
   }
 
   push(...args) {
-    History.push(...args)
+    history.push(...args)
   }
 
   setReducer(reducer) {
     this.reducer = reducer
   }
 }
-
-export default Utils

@@ -6,7 +6,7 @@ import Waves from 'node-waves'
 
 import { Router, History, Utils } from './index'
 
-// import AppContainer from './containers/AppContainer'
+import AppContainer from './containers/AppContainer'
 
 const history = History.setHistory()
 const utils = new Utils()
@@ -28,6 +28,6 @@ const App = () => {
 const rootE = document.querySelector('react')
 
 ReactDOM.render(
-  <App />,
+  <App>Hello World</App>,
   rootE
 )

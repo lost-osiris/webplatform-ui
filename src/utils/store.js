@@ -39,5 +39,5 @@ function configureStore() {
 }
 
 store = configureStore()
-
+export { history }
 export default store

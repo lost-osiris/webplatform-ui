@@ -5,8 +5,9 @@ import qs from 'query-string'
 import Utils from '~/utils'
 import Routes from '~/routes'
 
-import AppContainer from '~/containers/AppContainer'
-import MainRoutes from '~/modules/Main/components/UI'
+// import AppContainer from '~/containers/AppContainer'
+// import MainRoutes from '~/modules/Main/components/UI'
+import { thisExpression } from '@babel/types';
 
 class Router extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Router extends Component {
   }
 
   async setup() {
-    let routes = await this.setupRoutes(Routes)
+    let routes = await this.setupRoutes(this.props.routes)
     let layout = this.getLayout(this.history.location, routes)
 
     let navs = []
@@ -260,10 +261,10 @@ class Router extends Component {
     }
     
     return (
-      <AppContainer
+      <this.props.container 
         location={ this.state.location }
         layout={ layout }
-      />
+      /> 
     )
   }
 }
