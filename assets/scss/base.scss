@@ -1,0 +1,43 @@
+// Variables
+@import "variables";
+@import "animate";
+
+// Mixins
+@import "inc/mixins/mixins";
+
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Bootstrap overrides
+@import "inc/bootstrap-overrides/dropdown";
+@import "inc/bootstrap-overrides/progress";
+@import "inc/bootstrap-overrides/card";
+@import "inc/bootstrap-overrides/buttons";
+@import "inc/bootstrap-overrides/tables";
+@import "inc/bootstrap-overrides/forms";
+@import "inc/bootstrap-overrides/input-groups";
+@import "inc/bootstrap-overrides/custom-forms";
+@import "inc/bootstrap-overrides/pagination";
+@import "inc/bootstrap-overrides/alerts";
+@import "inc/bootstrap-overrides/close";
+@import "inc/bootstrap-overrides/breadcrumbs";
+@import "inc/bootstrap-overrides/collapse";
+@import "inc/bootstrap-overrides/carousel";
+@import "inc/bootstrap-overrides/modal";
+@import "inc/bootstrap-overrides/popovers";
+@import "inc/bootstrap-overrides/tabs";
+@import "inc/bootstrap-overrides/tooltip";
+
+// Vendors
+@import "../../node_modules/flatpickr/dist/flatpickr";
+
+// Vendor overrides
+@import "inc/vendor-overrides/flatpickr";
+@import "inc/vendor-overrides/sweetalert2";
+@import "inc/vendor-overrides/Waves";
+
+// Base setup
+@import "generics";
+@import "utilities";
+@import "core";
+@import "page-loader";
