@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from '~/components'
+import Button from './Button'
 
 export default class DropDown extends Component {
   constructor(props) {

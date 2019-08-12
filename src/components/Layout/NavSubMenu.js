@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from '~/components'
 
+import Link from '~/components/Link'
 import Utils from '~/utils'
 
 export default class NavSubMenu extends Component {

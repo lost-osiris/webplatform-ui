@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { Button, Tabs, Inputs, Card } from '~/components'
+
+import Inputs from './Inputs'
+import Button from './Button'
+import { Card } from './Card'
+import { Tabs } from './Tabs'
 
 export default class CommentBox extends Component {
   constructor(props) {

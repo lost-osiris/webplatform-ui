@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import Utils from '~/utils'
-import { Link } from '~/components'
+import Link from '~/components/Link'
 
 class TopNav extends Component {
   constructor(props) {

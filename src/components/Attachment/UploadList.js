@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Inputs } from '~/components'
+import Inputs from '~/components/Inputs'
 
 export default class UploadList extends Component {
   constructor(props) {

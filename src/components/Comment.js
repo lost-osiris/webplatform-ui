@@ -1,8 +1,12 @@
 import React, {Component} from 'react'
 import Utils from '~/utils'
 import ReactMarkdown from 'react-markdown'
-import {Button, FormatDate, Card } from '~/components'
 import classnames from 'classnames'
+
+import Button from './Button'
+import FormatDate from './FormatDate'
+import { Card } from './Card'
+
 
 /*
 #TODO component should be able to take in a color, title, api end point and

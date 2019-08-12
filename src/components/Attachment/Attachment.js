@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Inputs } from '~/components'
 import DragAndDrop from './DragAndDrop'
 import AttachmentInfo from './Info'
 import UploadList from './UploadList'
 import Utils from '~/utils'
-import { Button, DropDown } from '~/components'
+
+import Button from '~/components/Button'
+import DropDown from '~/components/DropDown'
+import Inputs from '~/components/Inputs'
 
 /**
   Props:

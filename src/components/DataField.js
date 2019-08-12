@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormatDate } from '~/components'
+import FormatDate from '~/components/FormatDate'
 
 export default class DataField extends React.Component {
   constructor(props) {

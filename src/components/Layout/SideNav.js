@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
 
-import { Link } from '~/components'
+import Link from '~/components/Link'
 import NavSubMenu from './NavSubMenu.js'
 import Utils from '~/utils'
 

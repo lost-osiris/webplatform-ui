@@ -1,7 +1,9 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Inputs, Form } from '~/components'
+
+import Text from '~/components/Inputs/Text'
+import Form from '~/components/Form'
 
 import Main from './Container'
 import ApiContainer from './ApiContainer'
@@ -202,7 +204,7 @@ class Autocomplete extends Component {
     // console.log(this.props.id, this.props.form)
     return (
       <div className="twitter-typeahead fg-toggled">
-        <Inputs.Text
+        <Text
           ref={ this.input }
           type="text"
           onFocus={ handleFocus }
