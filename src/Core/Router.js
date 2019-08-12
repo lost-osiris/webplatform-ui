@@ -7,7 +7,6 @@ import Routes from '~/routes'
 
 // import AppContainer from '~/containers/AppContainer'
 // import MainRoutes from '~/modules/Main/components/UI'
-import { thisExpression } from '@babel/types';
 
 class Router extends Component {
   constructor(props) {

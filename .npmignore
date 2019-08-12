@@ -1,3 +1,6 @@
 webpack/*
+src/*
+assets/*
+rollup*
 .eslintrc
 .gitingore

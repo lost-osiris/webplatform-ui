@@ -1,9 +1,4 @@
-// import '../assets/scss/app.scss'
-// import '../assets/less/vendors/font-awesome/font-awesome.less'
-// import '../assets/less/vendors/material-design-iconic-font/material-design-iconic-font.css'
-// import '../assets/less/inc/progress-bar.less'
-// import '../assets/less/inc/vendor-overrides/bootstrap-grid.less'
-// import '../assets/less/inc/autocomplete.less'
+// import style from '../assets/scss/app.scss'
 
 export { default as Utils } from '~/utils'
 export { default as Reducers } from '~/reducers'

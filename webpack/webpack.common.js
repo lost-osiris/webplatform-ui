@@ -19,13 +19,10 @@ module.exports = {
   resolve: {
     modules: [resolve(__dirname, '../node_modules/')],
     alias: {
-      'utils': resolve(__dirname, '../src/utils/index.js'),
-      'reducers': resolve(__dirname, '../src/reducers/index.js'),
-      'actions': resolve(__dirname, '../src/actions/index.js'),
-      '~': resolve(__dirname, "../src/"),
-      '!': resolve(__dirname, "../assets/"),
-      'less': resolve(__dirname, "../assets/less"),
-      'img': resolve(__dirname, "../assets/img"),
+      // '~': resolve(__dirname, "../src/"),
+      // 'assets': resolve(__dirname, "../assets/"),
+      // 'less': resolve(__dirname, "../assets/less"),
+      // 'img': resolve(__dirname, "../assets/img"),
     }
   },
   module: {
@@ -118,7 +115,21 @@ module.exports = {
       },
       {
         test   : /\.(ttf|eot|svg|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader : 'file-loader?name=assets/fonts/[name].[ext]'
+        loader : 'file-loader',
+        // loader : 'file-loader?name=fonts/[name].[ext]'
+        options: {
+          outputPath: 'fonts',
+          name: '[name].[ext]',
+          // publicPath: (url, resourcePath, context) => {
+          //   if (/fonts/.test(resourcePath)) {
+          //     return `~/es/fonts/${url}`;
+          //   }
+
+          //   console.log(url)
+          //   return url
+          //   // return `public_path/${url}`;
+          // },
+        }
       }
     ]
   },

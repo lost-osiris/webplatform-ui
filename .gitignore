@@ -12,3 +12,5 @@ cdn/
 *.log
 lib/*
 es/*
+es
+lib

@@ -20,21 +20,21 @@ const npmPackages = [
 ];
 
 const corePackages = [
-  "redux",
-  "redux-thunk",
-  "react-redux",
-  "history",
-  "qs",
-  "axios",
-  // "push.js",
-  "lodash",
-  "universal-cookie",
-  "node-waves",
+  // "redux",
+  // "redux-thunk",
+  // "react-redux",
+  // "history",
+  // "qs",
+  // "axios",
+  // // "push.js",
+  // "lodash",
+  // "universal-cookie",
+  // "node-waves",
   // "connected-react-router",
 ]
 
 module.exports = merge(common, {
-  entry: resolve(__dirname, '../src/index.js'),
+  entry: resolve(__dirname, '../src/styles.js'),
   // entry: {
     // core: corePackages,
     // main: resolve(__dirname, '../src/index.js'),
@@ -42,19 +42,19 @@ module.exports = merge(common, {
     // moment: ['moment', 'moment-timezone']
   // },
   output: {
-    path: resolve(__dirname, '../dist/'),
-    filename: 'webplatform-ui.js',
-    library: 'webplatform',
+    path: resolve(__dirname, '../es/'),
+    filename: 'styles.js',
+    // library: 'webplatform',
     // library: {
     //   root: 'webplatform-ui',
     //   amd: 'webplatform-ui',
     //   commonjs: 'webplatform-ui',
     // },
-    libraryTarget: 'commonjs2',
+    // libraryTarget: 'commonjs2',
   },
-  // mode: 'production',
-  mode: 'development',
-  // devtool: 'source-map',
+  mode: 'production',
+  // mode: 'development',
+  devtool: 'source-map',
   // optimization: {
   //   minimizer: [
   //     new TerserJSPlugin({}), 
@@ -62,7 +62,7 @@ module.exports = merge(common, {
   //   ],
   // },
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
