@@ -11,7 +11,7 @@ export { default as Pagination } from './Pagination'
 export { default as Button } from './Button'
 export { default as Link } from './Link'
 export { Card as Card } from './Card'
-export { default as UserAutocomplete } from './UserAutocomplete'
+// export { default as UserAutocomplete } from './UserAutocomplete'
 export { default as WithScroll } from './WithScroll'
 export { default as DataField } from './DataField'
 export { default as Label } from './Label'
@@ -24,5 +24,7 @@ export {
 import * as Debug from './Debug'
 export { Debug } 
 
-import * as Inputs from './Inputs'
+const Inputs = import('./Inputs')
+// import * as Inputs from './Inputs'
+
 export { Inputs } 
