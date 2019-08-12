@@ -6,31 +6,20 @@ module.exports = {
       ],
       plugins: [
         [
-          "@babel/plugin-transform-runtime",
-          {
-            // absoluteRunetime: true,
-            // "modules": false
-          }
-        ],
-        [
           "@babel/plugin-proposal-class-properties", 
           {
             loose: true
           }
         ],
-        "@babel/plugin-syntax-dynamic-import"
+        "@babel/plugin-transform-runtime",
       ]
     },
     production: {
+      presets:[
+        "@babel/preset-react"
+      ],
       plugins: [
-        [
-          "transform-runtime",
-          {
-            // absoluteRunetime: true,
-            "modules": 'umd' 
-          }
-        ],
-        
+        "@babel/runtime",
       ]
     }
   }

@@ -2,12 +2,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Text from '~/components/Inputs/Text'
-import Form from '~/components/Form'
+import Text from '../Text'
+import Form from '../../Form'
 
 import Main from './Container'
 import ApiContainer from './ApiContainer'
-import Utils from '~/utils'
+import Utils from '../../../utils'
 
 class Autocomplete extends Component {
   constructor(props) {

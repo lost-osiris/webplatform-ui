@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Utils from '~/utils'
+import Utils from '../utils'
 import ReactMarkdown from 'react-markdown'
 import classnames from 'classnames'
 

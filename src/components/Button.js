@@ -18,7 +18,14 @@ class Button extends Component {
     super(props)
   }
 
-  saveRef = (ref) => this.containerNode = ref
+  saveRef(ref) {
+    if (this.containerNode) {
+      return this.containerNode
+    } else {
+      this.containerNode = ref
+      return this.containerNode
+    }
+  }
 
   getButtonClass() {
     const {
@@ -105,7 +112,7 @@ class Button extends Component {
     )
   }
 
-  static Group =  ({...props}) => {
+  static Group({...props}) {
     return <BtnGroup {...props} />
   }
 }

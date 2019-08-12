@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import History from '~/Core/History'
+import History from './Core/History'
 // import invariant from 'invariant'
 
 const isModifiedEvent = (event) =>
@@ -10,21 +10,11 @@ const isModifiedEvent = (event) =>
  * The public API for rendering a history-aware <a>.
  */
 class Link extends React.Component {
-  static propTypes = {
-    onClick: PropTypes.func,
-    target: PropTypes.string,
-    replace: PropTypes.bool,
-    to: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object
-    ]).isRequired
+  constructor(props) {
+    super(props)
   }
 
-  static defaultProps = {
-    replace: false
-  }
-
-  handleClick = (event) => {
+  handleClick(event) {
     if (this.props.onClick)
       this.props.onClick(event)
 
@@ -56,6 +46,16 @@ class Link extends React.Component {
 
     return <a {...props} onClick={this.handleClick} href={href} ref={innerRef} />
   }
+}
+
+Link.propTypes = {
+  onClick: PropTypes.func,
+  target: PropTypes.string,
+  replace: PropTypes.bool,
+  to: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]).isRequired
 }
 
 export default Link

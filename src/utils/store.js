@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
-import staticReducers  from '~/reducers'
-import History from '~/Core/History'
+import staticReducers  from '../reducers'
+import History from '../components/Core/History'
 
 let store
 var history = History.getHistory()

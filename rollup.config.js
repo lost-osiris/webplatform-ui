@@ -13,20 +13,8 @@ import autoprefixer from 'autoprefixer'
 import { terser } from 'rollup-plugin-terser'
 
 import { resolve } from 'path'
-import alias from 'rollup-plugin-alias'
 
 import pkg from './package.json'
-
-const aliases = alias({
-  // 'utils': resolve(__dirname, 'src/utils/index.js'),
-  // 'reducers': resolve(__dirname, 'src/reducers/index.js'),
-  // 'actions': resolve(__dirname, 'src/actions/index.js'),
-  '~': resolve(__dirname, "src/"),
-  '!': resolve(__dirname, "assets/"),
-  // 'less': resolve(__dirname, "assets/less"),
-  // 'img': resolve(__dirname, "assets/img"),
-  resolve: ['.js', '/index.js'],
-})
 
 const externals = [
   ...Object.keys(pkg.dependencies || {}),
@@ -64,7 +52,8 @@ export default [
   {
     input: 'src/index.js',
     output: { 
-      file: 'es/webplatform-ui.js', 
+      // file: 'es/webplatform-ui.js',
+      dir: 'es', 
       format: 'es', 
       indent: false, 
       sourcemap: true,
@@ -76,43 +65,56 @@ export default [
       commonjs(),
       globals(),
       builtins(),
-      aliases,
+      sass({
+        output: 'es/webplatform-ui.css',
+        // includePaths: [ 'node_modules/' ],
+        // importer(path) {
+        //   return { file: path[0] !== '~' ? path : path.slice(1) };
+        // }
+        // include: '**/*.scss',
+        // exclude: [],
+        // options: {
+        //   includePaths: ['node_modules']
+        // }
+      }),
+      // less({
+      //   // output: 'es/build.css'
+      // }),
       filesize(),
     ]
   },
   
   // ES for Browsers
-  {
-    input: 'src/index.js',
-    output: { 
-      file: 'es/webplatform-ui.min.js', 
-      format: 'es', 
-      indent: false, 
-      sourcemap: true,
-    },
-    external: externals,
-    plugins: [
-      babelConfig,
-      json(),
-      nodeResolve(),
-      commonjs(),
-      globals(),
-      builtins(),
-      replace({
-        'process.env.NODE_ENV': JSON.stringify('production')
-      }),
-      terser({
-        compress: {
-          pure_getters: true,
-          unsafe: true,
-          unsafe_comps: true,
-          warnings: false
-        }
-      }),
-      aliases,
-      filesize(),
-    ]
-  },
+  // {
+  //   input: 'src/index.js',
+  //   output: { 
+  //     file: 'es/webplatform-ui.min.js', 
+  //     format: 'es', 
+  //     indent: false, 
+  //     sourcemap: true,
+  //   },
+  //   external: externals,
+  //   plugins: [
+  //     babelConfig,
+  //     json(),
+  //     nodeResolve(),
+  //     commonjs(),
+  //     globals(),
+  //     builtins(),
+  //     replace({
+  //       'process.env.NODE_ENV': JSON.stringify('production')
+  //     }),
+  //     terser({
+  //       compress: {
+  //         pure_getters: true,
+  //         unsafe: true,
+  //         unsafe_comps: true,
+  //         warnings: false
+  //       }
+  //     }),
+  //     filesize(),
+  //   ]
+  // },
 
   // Styles
   // {

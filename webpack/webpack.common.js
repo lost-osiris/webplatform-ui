@@ -18,19 +18,12 @@ module.exports = {
   },
   resolve: {
     modules: [resolve(__dirname, '../node_modules/')],
-    alias: {
-      // '~': resolve(__dirname, "../src/"),
-      // 'assets': resolve(__dirname, "../assets/"),
-      // 'less': resolve(__dirname, "../assets/less"),
-      // 'img': resolve(__dirname, "../assets/img"),
-    }
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        type: 'javascript/esm',
         use: [
           {
             loader: 'babel-loader',
@@ -39,14 +32,8 @@ module.exports = {
                 [
                   '@babel/preset-env',
                   {
-                    // "modules": false
-                    // targets: {
-                    //   esmodules: true
-                    // }
+                    "modules": false
                   }
-                    // {
-                  //   "modules": false
-                  // }
                 ]
               ],
               cwd: resolve(__dirname, '../'),

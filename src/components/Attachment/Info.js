@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card } from '~/components/Card'
+import { Card } from '../Card'
 
 export default class AttachmentInfo extends Component {
   render() {

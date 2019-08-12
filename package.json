@@ -2,6 +2,7 @@
   "name": "webplatform-ui",
   "version": "1.3.0",
   "main": "src/webplatform-ui.js",
+  "module": "src/index.js",
   "repository": "https://github.com/lost-osiris/webplatform-ui",
   "author": "Matthew Owens",
   "license": "MIT",
@@ -17,7 +18,7 @@
     "es/*",
     "assets/*"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
@@ -33,9 +34,9 @@
     "popper.js": "^1.15.0",
     "prop-types": "^15.7.2",
     "qs": "^6.7.0",
-    "react": "^16.8.6",
+    "react": "^16.9.0",
     "react-custom-scrollbars": "^4.2.1",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.9.0",
     "react-markdown": "^4.1.0",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",

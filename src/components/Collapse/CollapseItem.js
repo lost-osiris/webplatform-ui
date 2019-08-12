@@ -37,7 +37,7 @@ export default class CollapseItem extends Component {
   }
 
   // Simply invert the current state, effectivley toggling it
-  toggle = () => {
+  toggle() {
     this.setState({collapsed: !this.state.collapsed})
   }
 

@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import qs from 'query-string'
 
-import Utils from '~/utils'
-import Routes from '~/routes'
+import Utils from '../../utils'
 
 // import AppContainer from '~/containers/AppContainer'
 // import MainRoutes from '~/modules/Main/components/UI'

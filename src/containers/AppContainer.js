@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Cookies from 'universal-cookie'
-import Utils from '~/utils'
-import { Layout } from '~/components/Layout'
-import Loading from '~/Core/Loading'
+import Utils from '../utils'
+import { Layout } from '../components/Layout'
+import Loading from '../components/Core/Loading'
+import { Inputs } from '../components'
 
 export class AppContainer extends React.Component {
   constructor(props) {
@@ -101,6 +102,35 @@ export class AppContainer extends React.Component {
   }
 }
 
+class Main extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.utils = new Utils()
+
+    this.state = {
+      text: 'Hello World'
+    }
+  }
+
+  onChange(text) {
+    this.setState({text: text})
+  }
+
+  render() {
+    console.log(Inputs.Text)
+    return (
+      <div className="row">
+        <div className="col-lg-12">
+          {/* <Provider store={this.utils.getStore()}> */}
+            <Inputs.Text onChange={this.onChange} />
+          {/* </Provider> */}
+        </div>
+      </div>
+    )
+  }
+}
+
 const mapStateToProps = (state) => {
   return {
     user: state.dashboard.user,
@@ -108,4 +138,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(AppContainer)
+export default connect(mapStateToProps)(Main)

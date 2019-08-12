@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment-timezone'
 
-import Utils from '~/utils'
+import Utils from '../utils'
 
 export default class FormatDate extends Component {
   constructor(props) {

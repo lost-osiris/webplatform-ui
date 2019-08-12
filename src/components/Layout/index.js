@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { Scrollbars } from 'react-custom-scrollbars'
 import { connect } from 'react-redux'
 
-import Loading from '~/Core/Loading'
-import ConnectedUI from '~/Core/ConnectedUI'
+import Loading from '../Core/Loading'
+import ConnectedUI from '../Core/ConnectedUI'
 
-import Utils from '~/utils'
+import Utils from '../../utils'
 
 import SideNav from './SideNav'
 import { TopNav, TopNavSearch } from './TopNav'

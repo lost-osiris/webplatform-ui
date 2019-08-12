@@ -19,8 +19,8 @@ Waves.init()
 const App = () => {
   return (
     <Provider store={ store }>
-      {/* <AppContainer history={history} /> */}
-      <Router history={ history } />
+      <AppContainer history={history} />
+      {/* <Router history={ history } /> */}
     </Provider>
   )
 }
@@ -28,6 +28,7 @@ const App = () => {
 const rootE = document.querySelector('react')
 
 ReactDOM.render(
-  <App>Hello World</App>,
+  // <App>Hello World</App>,
+  <App />,
   rootE
 )

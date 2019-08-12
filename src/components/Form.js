@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import Utils from '~/utils'
+import Utils from '../utils'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 

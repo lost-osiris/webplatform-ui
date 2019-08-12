@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
 
-import Link from '~/components/Link'
+import Link from '../Link'
 import NavSubMenu from './NavSubMenu.js'
-import Utils from '~/utils'
+import Utils from '../../utils'
 
 class SideNav extends Component {
   constructor(props) {

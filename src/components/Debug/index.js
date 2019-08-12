@@ -1,1 +1,5 @@
-export { default as Json } from './Json'
+import Json from './Json'
+
+export default {
+  Json: Json
+}

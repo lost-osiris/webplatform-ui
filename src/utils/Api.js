@@ -1,6 +1,6 @@
 import SwalHandler from './SwalHandler'
 import Swal from 'sweetalert2'
-import { apiRequest, apiSuccess, apiFailure } from '~/actions'
+import { apiRequest, apiSuccess, apiFailure } from '../actions'
 
 export default class Api {
   constructor(store) {
