@@ -1,5 +1,8 @@
+// Mixins
+@import "mixins/mixins";
+
 // Options
-$font-path: "../fonts" !default;
+$font-path: "~webplatform-ui/assets/fonts" !default;
 $enable-transitions: true;
 $enable-shadows: false;
 
@@ -39,38 +42,38 @@ $black: #000000;
 $white: #FFFFFF;
 
 $colors: (
-  white: $white,
-  black: $black,
-  red: $red,
-  pink: $pink,
-  purple: $purple,
-  deep-purple: $deep-purple,
-  indigo: $indigo,
-  blue: $blue,
-  light-blue: $light-blue,
-  cyan: $cyan,
-  teal: $teal,
-  green: $green,
-  light-green: $light-green,
-  lime: $lime,
-  yellow: $yellow,
-  amber: $amber,
-  orange: $orange,
-  deep-orange: $deep-orange,
-  brown: $brown,
-  blue-grey: $blue-grey,
-  grey: $grey
+  'white': $white,
+  'black': $black,
+  'red': $red,
+  'pink': $pink,
+  'purple': $purple,
+  'deep-purple': $deep-purple,
+  'indigo': $indigo,
+  'blue': $blue,
+  'light-blue': $light-blue,
+  'cyan': $cyan,
+  'teal': $teal,
+  'green': $green,
+  'light-green': $light-green,
+  'lime': $lime,
+  'yellow': $yellow,
+  'amber': $amber,
+  'orange': $orange,
+  'deep-orange': $deep-orange,
+  'brown': $brown,
+  'blue-grey': $blue-grey,
+  'grey': $grey
 );
 
 // Theme Colors
 $theme-colors: (
-  primary: $blue,
-  secondary: $gray-600,
-  success: $green,
-  info: $light-blue,
-  warning: $amber,
-  danger: $red,
-  dark: $gray-700
+  'primary': $blue,
+  'secondary': $gray-600,
+  'success': $green,
+  'info': $light-blue,
+  'warning': $amber,
+  'danger': $red,
+  'dark': $gray-700
 );
 
 $yiq-text-dark: #525a62;
@@ -343,3 +346,6 @@ $btn-border-width: 2px;
 // Accordion
 $accordion-border-color: #eee;
 $accordion-padding: 0.85rem 1.35rem;
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";

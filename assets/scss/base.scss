@@ -1,43 +1,42 @@
 // Variables
-@import "variables";
 @import "animate";
 
-// Mixins
-@import "inc/mixins/mixins";
-
-// Bootstrap
-@import "../../node_modules/bootstrap/scss/bootstrap";
-
 // Bootstrap overrides
-@import "inc/bootstrap-overrides/dropdown";
-@import "inc/bootstrap-overrides/progress";
-@import "inc/bootstrap-overrides/card";
-@import "inc/bootstrap-overrides/buttons";
-@import "inc/bootstrap-overrides/tables";
-@import "inc/bootstrap-overrides/forms";
-@import "inc/bootstrap-overrides/input-groups";
-@import "inc/bootstrap-overrides/custom-forms";
-@import "inc/bootstrap-overrides/pagination";
-@import "inc/bootstrap-overrides/alerts";
-@import "inc/bootstrap-overrides/close";
-@import "inc/bootstrap-overrides/breadcrumbs";
-@import "inc/bootstrap-overrides/collapse";
-@import "inc/bootstrap-overrides/carousel";
-@import "inc/bootstrap-overrides/modal";
-@import "inc/bootstrap-overrides/popovers";
-@import "inc/bootstrap-overrides/tabs";
-@import "inc/bootstrap-overrides/tooltip";
+@import "bootstrap-overrides/dropdown";
+@import "bootstrap-overrides/progress";
+@import "bootstrap-overrides/card";
+@import "bootstrap-overrides/buttons";
+@import "bootstrap-overrides/tables";
+@import "bootstrap-overrides/forms";
+@import "bootstrap-overrides/input-groups";
+@import "bootstrap-overrides/custom-forms";
+@import "bootstrap-overrides/pagination";
+@import "bootstrap-overrides/alerts";
+@import "bootstrap-overrides/close";
+@import "bootstrap-overrides/breadcrumbs";
+@import "bootstrap-overrides/collapse";
+@import "bootstrap-overrides/carousel";
+@import "bootstrap-overrides/modal";
+@import "bootstrap-overrides/popovers";
+@import "bootstrap-overrides/tabs";
+@import "bootstrap-overrides/tooltip";
 
 // Vendors
-@import "../../node_modules/flatpickr/dist/flatpickr";
+@import "~flatpickr/dist/flatpickr.css";
 
 // Vendor overrides
-@import "inc/vendor-overrides/flatpickr";
-@import "inc/vendor-overrides/sweetalert2";
-@import "inc/vendor-overrides/Waves";
+@import "vendor-overrides/flatpickr";
+@import "vendor-overrides/sweetalert2";
+@import "vendor-overrides/Waves";
+
+// Fonts
+@import "~font-awesome/css/font-awesome.css";
+@import "~webplatform-ui/assets/css/material-design-iconic-font.css";
+@import "fonts";
 
 // Base setup
 @import "generics";
 @import "utilities";
 @import "core";
 @import "page-loader";
+@import "theme";
