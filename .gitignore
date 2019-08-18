@@ -13,4 +13,6 @@ cdn/
 lib/*
 es/*
 es
+es-production/*
+es-production
 lib
