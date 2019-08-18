@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Utils from '../../utils'
 import PropTypes from 'prop-types'
+
+import RadioButton from './RadioButton'
 // import classnames from 'classnames'
 
 /**
@@ -106,50 +108,6 @@ class RadioContainer extends Component {
   }
 }
 
-/**
-  Props:
-    - value
-    - label
-    - id (required so that Form component can find this component and set the onChange handler properly)
-*/
-export class RadioButton extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    const {
-      name,
-      label,
-      value,
-      selectedValue,
-      inline,
-      id,
-    } = this.props
-
-    let className = 'radio'
-    if (inline) {
-      className += ' radio--inline'
-    }
-
-    return (
-      <div className={className}>
-        <input
-          type="radio"
-          id={id}
-          name={name}
-          value={value}
-        />
-        <label className="radio__label"
-          data-checked={value === selectedValue}
-          onClick={() => this.props.onChange(this.props.value)}>
-          {label}
-        </label>
-      </div>
-    )
-  }
-}
-
 RadioContainer.propTypes = {
   name: PropTypes.string,           // Name of the radio group
   selectedValue: PropTypes.string,  // Currently selected radio value
@@ -165,4 +123,4 @@ const mapStateToProps = (state, ownProps) => {
 
 const Radio = connect(mapStateToProps)(RadioContainer)
 
-export { Radio } 
+export default Radio

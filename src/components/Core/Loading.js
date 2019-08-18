@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import classnames from 'classnames'
 
-export default class Loading extends Component {
+export default class Loading extends React.Component {
   constructor(props) {
     super(props)
     this.opacity = 1

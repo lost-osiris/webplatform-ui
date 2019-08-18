@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 export default class Loader extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      module: undefined
+    }
   }
 
   async componentDidMount() {
@@ -12,9 +15,11 @@ export default class Loader extends Component {
   }
 
   render() {
-    const { module } = this.state;
+    const { module } = this.state
+
+    if (!module) return <div>Loading module...</div>
     console.log(module)
-    if (!module) return <div>Loading module...</div>;
-    if (module.view) return React.createElement(module.view);
+    return React.createElement(module, module.props)
+    // return module
   }
 }

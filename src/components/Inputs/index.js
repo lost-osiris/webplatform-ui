@@ -1,28 +1,14 @@
-import Text from './Text'
-import Autocomplete from './Autocomplete'
-import Switch from './Switch'
-import DateTime from './Flatpickr'
-import { Radio, RadioButton } from './Radio'
-import Check from './Check'
-import Select from './Select'
+import loadable from '@loadable/component'
 
-// export { default as Text } from './Text'
-// export { default as Autocomplete } from './Autocomplete'
-// export { default as Switch } from './Switch'
-// export { default as DateTime } from './Flatpickr'
-// export { default as Select } from './Select'
-// export { Radio, RadioButton } from './Radio'
-// export { default as Check } from './Check'
-export {
-  Text,
-  Autocomplete,
-  Check,
-  Select,
-  Switch,
-  Radio,
-  RadioButton,
-  DateTime
-} 
+const Text = loadable(() => import('./Text'))
+const Radio = loadable(() => import('./Radio'))
+const RadioButton = loadable(() => import('./RadioButton'))
+const Switch = loadable(() => import('./Switch'))
+const DateTime = loadable(() => import('./Flatpickr'))
+const Check = loadable(() => import('./Check'))
+const Select = loadable(() => import('./Select'))
+const Autocomplete = loadable(() => import('./Autocomplete'))
+
 export default {
   Radio: Radio, 
   Switch: Switch,
@@ -30,6 +16,6 @@ export default {
   Select: Select,
   Check: Check,
   Autocomplete: Autocomplete,
-  RadioButton:RadioButton,
-  Text: Text
+  RadioButton: RadioButton,
+  Text: Text,
 }

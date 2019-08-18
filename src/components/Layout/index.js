@@ -12,6 +12,8 @@ import { TopNav, TopNavSearch } from './TopNav'
 import ProgressBar from './ProgressBar'
 import NavSubMenu from './NavSubMenu'
 
+import './scss/main.scss'
+
 class Layout extends Component {
   constructor(props) {
     super(props)

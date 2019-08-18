@@ -1,6 +1,4 @@
-// import React from 'react'
-
-import Loader from './Loader'
+import loadable from '@loadable/component'
 
 export { 
   Layout as Layout, 
@@ -8,48 +6,25 @@ export {
   NavSubMenu as NavSubMenu 
 } from './Layout'
 
-// const Inputs = import('./Inputs')
-import * as Inputs from './Inputs'
+import Inputs from './Inputs'
 
-import Button from './Button'
-// const Pagination = import('./Pagination')
-// const Button = import('./Button')
-// const Link = import('./Link')
-// const WithScroll = import('./WithScroll')
-// const DataField = import('./DataField')
-// const Label = import('./Label')
-// const DropDown = import('./DropDown')
-// const CommentBox = import('./CommentBox')
-// const Comment = import('./Comment')
-// const Form = import('./Form')
-// const FormatDate = import('./FormatDate')
-// const Debug = import('./Debug')
-
-// const Card = import('./Card').then(({Card}) => Card)
-// const Tabs = import('./Tabs').then(({Tabs}) => Tabs)
-// const Attachment = import('./Attachment').then(({Attachment}) => Attachment)
-// const Collapse = import('./Collapse').then(({Collapse}) => Collapse)
-// const ToolsWidget = import('./Widgets').then(({Tools}) => Tools)
-
-// const Inputs = <Loader resolve={() => import('./Inputs')} />
-const Pagination = () => import('./Pagination')
-// const Button = () => import('./Button')
-const Link = () => import('./Link')
-const WithScroll = () => import('./WithScroll')
-const DataField = () => import('./DataField')
-const Label = () => import('./Label')
-const DropDown = () => import('./DropDown')
-const CommentBox = () => import('./CommentBox')
-const Comment = () => import('./Comment')
-const Form = () => import('./Form')
-const FormatDate = () => import('./FormatDate')
-const Debug = () => import('./Debug')
-
-const Card = () => import('./Card').then(({Card}) => Card)
-const Tabs = () => import('./Tabs').then(({Tabs}) => Tabs)
-const Attachment = () => import('./Attachment').then(({Attachment}) => Attachment)
-const Collapse = () => import('./Collapse').then(({Collapse}) => Collapse)
-const ToolsWidget = () => import('./Widgets').then(({Tools}) => Tools)
+const Form = loadable(() => import('./Form'))
+const Button = loadable(() => import('./Button'))
+const Pagination = loadable(() => import('./Pagination'))
+const Link = loadable(() => import('./Link'))
+const WithScroll = loadable(() => import('./WithScroll'))
+const DataField = loadable(() => import('./DataField'))
+const Label = loadable(() => import('./Label'))
+const DropDown = loadable(() => import('./DropDown'))
+const CommentBox = loadable(() => import('./CommentBox'))
+const Comment = loadable(() => import('./Comment'))
+const FormatDate = loadable(() => import('./FormatDate'))
+const Debug = loadable(() => import('./Debug'))
+const Card = loadable(() => import('./Card').then(({Card}) => Card))
+const Tabs = loadable(() => import('./Tabs').then(({Tabs}) => Tabs))
+const Attachment = loadable(() => import('./Attachment').then(({Attachment}) => Attachment))
+const Collapse = loadable(() => import('./Collapse').then(({Collapse}) => Collapse))
+const ToolsWidget = loadable(() => import('./Widgets').then(({Tools}) => Tools))
 
 export { 
   Inputs,

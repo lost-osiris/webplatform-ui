@@ -123,7 +123,8 @@ class Main extends React.Component {
       <div className="row">
         <div className="col-lg-12">
           {/* <Provider store={this.utils.getStore()}> */}
-            <Inputs.Text onChange={this.onChange} />
+          <h1>{ this.state.text }</h1>
+          <Inputs.Text onChange={this.onChange} />
           {/* </Provider> */}
         </div>
       </div>

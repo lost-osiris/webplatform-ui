@@ -1,9 +1,9 @@
 'use strict';
 
 if (process.env.NODE_ENV === 'production') {
-  // require('../es/main.css');
-  module.exports = require('../es/index.min.js');
+  require('../es-production/index.css');
+  module.exports = require('../es-production/index.js');
 } else {
-  // require('../es/main.css');
+  require('../es/index.css');
   module.exports = require('../es/index.js');
 }
