@@ -5,13 +5,14 @@ module.exports = {
         "@babel/preset-react"
       ],
       plugins: [
+        "@babel/plugin-transform-runtime",
         [
           "@babel/plugin-proposal-class-properties", 
           {
             loose: true
           }
         ],
-        "@babel/plugin-transform-runtime",
+        "@babel/plugin-syntax-dynamic-import",
       ]
     },
     production: {
@@ -19,7 +20,7 @@ module.exports = {
         "@babel/preset-react"
       ],
       plugins: [
-        "@babel/runtime",
+        "@babel/plugin-transform-runtime",
       ]
     }
   }
