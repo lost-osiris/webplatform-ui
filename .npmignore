@@ -2,5 +2,6 @@ webpack/*
 src/*
 assets/*
 rollup*
+old-assets*
 .eslintrc
 .gitingore
