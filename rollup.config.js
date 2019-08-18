@@ -5,13 +5,14 @@ import replace from 'rollup-plugin-replace'
 import builtins from 'rollup-plugin-node-builtins'
 import globals from 'rollup-plugin-node-globals'
 import json from 'rollup-plugin-json'
-import sass from 'rollup-plugin-sass'
-import less from 'rollup-plugin-less'
-import postcss from 'rollup-plugin-postcss'
 import filesize from 'rollup-plugin-filesize'
-import autoprefixer from 'autoprefixer'
-import { terser } from 'rollup-plugin-terser'
+import url from 'rollup-plugin-url'
 
+import sass from 'rollup-plugin-sass'
+import autoprefixer from 'autoprefixer'
+import cssnano from 'cssnano'
+
+import { terser } from 'rollup-plugin-terser'
 import { resolve } from 'path'
 
 import pkg from './package.json'
@@ -19,11 +20,11 @@ import pkg from './package.json'
 const externals = [
   ...Object.keys(pkg.dependencies || {}),
   ...Object.keys(pkg.peerDependencies || {})
+
 ]
 
-
-console.log(externals)
-
+const cssExportMap = {}
+ 
 const babelConfig = babel({
   babelrc: false,
   presets: [
@@ -43,7 +44,9 @@ const babelConfig = babel({
       }
     ],
   ],
-  exclude: 'node_modules/**', 
+  exclude: [
+    'node_modules/**'
+  ],
   runtimeHelpers: true,
 })
 
@@ -52,7 +55,6 @@ export default [
   {
     input: 'src/index.js',
     output: { 
-      // file: 'es/webplatform-ui.js',
       dir: 'es', 
       format: 'es', 
       indent: false, 
@@ -66,118 +68,66 @@ export default [
       globals(),
       builtins(),
       sass({
-        output: 'es/webplatform-ui.css',
-        // includePaths: [ 'node_modules/' ],
-        // importer(path) {
-        //   return { file: path[0] !== '~' ? path : path.slice(1) };
-        // }
-        // include: '**/*.scss',
-        // exclude: [],
-        // options: {
-        //   includePaths: ['node_modules']
-        // }
+        output: 'es/index.css', 
+        sourcemap: true,
+        modules: true,
+        plugins: [          
+          autoprefixer,
+        ],
+        options: {
+          data: '@import \'./assets/scss/global-variables.scss\';'
+        }
       }),
-      // less({
-      //   // output: 'es/build.css'
-      // }),
+      url({
+        // by default, rollup-plugin-url will not handle font files
+        include: ['**/*.woff', '**/*.woff2', '**/*.tff', '**/*.svg', '**/*.eot'],
+        limit: 10 * 1024,
+        // setting infinite limit will ensure that the files 
+        // are always bundled with the code, not copied to /dist
+        // limit: Infinity,
+      }),
       filesize(),
     ]
   },
   
   // ES for Browsers
-  // {
-  //   input: 'src/index.js',
-  //   output: { 
-  //     file: 'es/webplatform-ui.min.js', 
-  //     format: 'es', 
-  //     indent: false, 
-  //     sourcemap: true,
-  //   },
-  //   external: externals,
-  //   plugins: [
-  //     babelConfig,
-  //     json(),
-  //     nodeResolve(),
-  //     commonjs(),
-  //     globals(),
-  //     builtins(),
-  //     replace({
-  //       'process.env.NODE_ENV': JSON.stringify('production')
-  //     }),
-  //     terser({
-  //       compress: {
-  //         pure_getters: true,
-  //         unsafe: true,
-  //         unsafe_comps: true,
-  //         warnings: false
-  //       }
-  //     }),
-  //     filesize(),
-  //   ]
-  // },
-
-  // Styles
-  // {
-  //   input: 'src/styles.js',
-  //   output: { 
-  //     file: 'es/webplatform-ui-styles.js', 
-  //     format: 'es', 
-  //     // indent: false 
-  //   },
-  //   external: externals,
-  //   plugins: [
-  //     nodeResolve(),
-  //   //   postcss({ 
-  //   //     extract: true, 
-  //   //     // plugins: [autoprefixer],
-  //   //     modules: true,
-  //   //  }),
-  //     commonjs(),
-  //     sass({
-  //       output: 'es/webplatform-ui.css',
-  //       // includePaths: [ 'node_modules/' ],
-  //       // importer(path) {
-  //       //   return { file: path[0] !== '~' ? path : path.slice(1) };
-  //       // }
-  //       // include: '**/*.scss',
-  //       // exclude: [],
-  //       // options: {
-  //       //   includePaths: ['node_modules']
-  //       // }
-  //     }),
-  //     less({
-  //       // output: 'es/build.css'
-  //     }),
-  //     aliases,
-  //     filesize(),
-  //   ]
-  // },
-  
-  // Styles - Production
-  // {
-  //   input: 'src/styles.js',
-  //   external: externals,
-  //   plugins: [
-  //     nodeResolve(),
-  //     commonjs(),
-  //     sass({
-  //       output: 'es/build.css'
-  //     }),
-  //     less({
-  //       output: 'es/build.css'
-  //     }),
-  //     replace({
-  //       'process.env.NODE_ENV': JSON.stringify('production')
-  //     }),
-  //     terser({
-  //       compress: {
-  //         pure_getters: true,
-  //         unsafe: true,
-  //         unsafe_comps: true,
-  //         warnings: false
-  //       }
-  //     }),
-  //     aliases,
-  //   ]
-  // }
+  {
+    input: 'src/index.js',
+    output: { 
+      dir: 'es-production', 
+      format: 'es', 
+      indent: false, 
+      sourcemap: true,
+    },
+    external: externals,
+    plugins: [
+      babelConfig,
+      json(),
+      nodeResolve(),
+      commonjs(),
+      globals(),
+      builtins(),
+      sass({
+        output: 'es-production/index.css', 
+        plugins: [
+          autoprefixer
+        ],
+        options: {
+          data: '@import \'./assets/scss/global-variables.scss\';'
+        }
+      }),
+      replace({
+        'process.env.NODE_ENV': JSON.stringify('production')
+      }),
+      terser({
+        compress: {
+          pure_getters: true,
+          unsafe: true,
+          unsafe_comps: true,
+          warnings: false
+        }
+      }),
+      filesize(),
+    ]
+  },
 ]
