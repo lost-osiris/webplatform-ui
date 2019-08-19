@@ -8360,9 +8360,9 @@ webpack@^4.39.1:
     webpack-sources "^1.4.1"
 
 webplatform-ui@^1.4.0:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/webplatform-ui/-/webplatform-ui-1.4.4.tgz#5d514dafae045aa208961060dcb48062ee610240"
-  integrity sha512-Mp/lQEJs4nZnLZpLQPI16kMa6ANqAOkTXeiXHxYTbvVSsQ6gwtgl/SpEAfdIV2VeO755dPgPPAHefR8eNJLmCg==
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/webplatform-ui/-/webplatform-ui-1.4.6.tgz#9a5704ff2b6a20ccd4279f1dde6b3475ae41d6dd"
+  integrity sha512-SMtieTVSdCHNtplvL4aTcf81SXOlu4EF7YLXqTO/5/faDYLxpEL0lv4vAAqTeKtVL8OSUzPGFo2YsjJQzOSAJQ==
   dependencies:
     "@loadable/component" "^5.10.2"
     axios "^0.19.0"
