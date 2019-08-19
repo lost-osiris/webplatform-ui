@@ -8359,6 +8359,38 @@ webpack@^4.39.1:
     watchpack "^1.6.0"
     webpack-sources "^1.4.1"
 
+webplatform-ui@^1.4.0:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/webplatform-ui/-/webplatform-ui-1.4.1.tgz#840c5400c52741019c3f21ec0b3493da73d19bed"
+  integrity sha512-sb94YICz49YMIpcv0k6hbuzxfq+o0cWxso9umuC+keC2ooP09YvFp9YmnTXqnTbglsfH+s8YVIdyjA/fTSYHSg==
+  dependencies:
+    "@loadable/component" "^5.10.2"
+    axios "^0.19.0"
+    bootstrap "^4.3.1"
+    classnames "^2.2.6"
+    flatpickr "^4.6.2"
+    font-awesome "^4.7.0"
+    history "^4.9.0"
+    jquery "^3.4.1"
+    lodash "^4.17.15"
+    markdown-it "^9.1.0"
+    moment "^2.24.0"
+    moment-timezone "^0.5.26"
+    node-waves "^0.7.6"
+    path-to-regexp "^3.0.0"
+    popper.js "^1.15.0"
+    prop-types "^15.7.2"
+    qs "^6.8.0"
+    react "^16.9.0"
+    react-custom-scrollbars "^4.2.1"
+    react-dom "^16.9.0"
+    react-markdown "^4.1.0"
+    react-redux "^7.1.0"
+    redux "^4.0.4"
+    redux-thunk "^2.3.0"
+    sweetalert2 "^8.16.1"
+    universal-cookie "^4.0.2"
+
 websocket-driver@>=0.5.1:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/websocket-driver/-/websocket-driver-0.7.3.tgz#a2d4e0d4f4f116f1e6297eba58b05d430100e9f9"
