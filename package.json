@@ -1,6 +1,6 @@
 {
   "name": "webplatform-ui",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "main": "src/webplatform-ui.js",
   "repository": "https://github.com/lost-osiris/webplatform-ui",
   "author": "Matthew Owens",
