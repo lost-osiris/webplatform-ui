@@ -1,17 +1,14 @@
 {
   "name": "webplatform-ui",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "main": "src/webplatform-ui.js",
   "repository": "https://github.com/lost-osiris/webplatform-ui",
   "author": "Matthew Owens",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "webpack --config webpack/webpack.prod.js --watch",
-    "start": "webpack-dev-server --config webpack/webpack.dev.js",
-    "styles": "webpack --config webpack/webpack.prod.js",
-    "compile": "rm -rf es es-production; rollup -c",
-    "devel": "rm -rf es es-production; rollup -c -w"
+    "start": "webpack-dev-server --config webpack.js",
+    "build": "rm -rf es es-production; rollup -c"
   },
   "files": [
     "es-production/*",
@@ -30,7 +27,6 @@
     "babel-plugin-lodash": "^3.3.4",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
-    "cssnano": "^4.1.10",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.9.0",
