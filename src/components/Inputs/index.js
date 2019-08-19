@@ -7,6 +7,7 @@ import Switch from './Switch'
 import DateTime from './Flatpickr'
 import Check from './Check'
 import Autocomplete from './Autocomplete'
+import Select from './Select'
 
 // const Text = loadable(() => import('./Text'))
 // const Radio = loadable(() => import('./Radio'))
