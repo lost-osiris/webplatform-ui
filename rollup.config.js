@@ -10,7 +10,6 @@ import url from 'rollup-plugin-url'
 
 import sass from 'rollup-plugin-sass'
 import autoprefixer from 'autoprefixer'
-import cssnano from 'cssnano'
 
 import { terser } from 'rollup-plugin-terser'
 import { resolve } from 'path'
@@ -22,8 +21,6 @@ const externals = [
   ...Object.keys(pkg.peerDependencies || {})
 
 ]
-
-const cssExportMap = {}
  
 const babelConfig = babel({
   babelrc: false,
@@ -77,14 +74,6 @@ export default [
         options: {
           data: '@import \'./assets/scss/global-variables.scss\';'
         }
-      }),
-      url({
-        // by default, rollup-plugin-url will not handle font files
-        include: ['**/*.woff', '**/*.woff2', '**/*.tff', '**/*.svg', '**/*.eot'],
-        limit: 10 * 1024,
-        // setting infinite limit will ensure that the files 
-        // are always bundled with the code, not copied to /dist
-        // limit: Infinity,
       }),
       filesize(),
     ]

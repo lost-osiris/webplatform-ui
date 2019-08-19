@@ -102,36 +102,6 @@ export class AppContainer extends React.Component {
   }
 }
 
-class Main extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.utils = new Utils()
-
-    this.state = {
-      text: 'Hello World'
-    }
-  }
-
-  onChange(text) {
-    this.setState({text: text})
-  }
-
-  render() {
-    console.log(Inputs.Text)
-    return (
-      <div className="row">
-        <div className="col-lg-12">
-          {/* <Provider store={this.utils.getStore()}> */}
-          <h1>{ this.state.text }</h1>
-          <Inputs.Text onChange={this.onChange} />
-          {/* </Provider> */}
-        </div>
-      </div>
-    )
-  }
-}
-
 const mapStateToProps = (state) => {
   return {
     user: state.dashboard.user,
@@ -139,4 +109,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Main)
+export default connect(mapStateToProps)(AppContainer)
