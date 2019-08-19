@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Cookies from 'universal-cookie'
-import Utils from '../utils'
-import { Layout } from '../components/Layout'
-import Loading from '../components/Core/Loading'
-import { Inputs } from '../components'
+import Utils from '../../src/utils'
+import { Layout } from '../../src/components/Layout'
+import Loading from '../../src/components/Core/Loading'
+import { Inputs } from '../../src/components'
 
 export class AppContainer extends React.Component {
   constructor(props) {

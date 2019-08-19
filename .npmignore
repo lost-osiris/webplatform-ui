@@ -1,5 +1,6 @@
 webpack/*
 src/*
+app/*
 assets/*
 rollup*
 old-assets*

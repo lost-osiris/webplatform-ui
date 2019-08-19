@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import Waves from 'node-waves'
 
-import { Router, History, Utils } from './index'
+import { Router, History, Utils } from '../src/index'
 
 import routes from './routes'
 import AppContainer from './containers/AppContainer'
