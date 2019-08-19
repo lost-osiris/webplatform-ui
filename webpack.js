@@ -24,7 +24,7 @@ module.exports = {
       // '~webplatform': resolve(__dirname, '/')
       // 'webplatform-ui': resolve(__dirname, 'assets/'),
       // '~webplatform-ui': resolve(__dirname, 'node_modules'),
-      // '~': resolve(__dirname, 'node_modules'),
+      '~': resolve(__dirname, 'src'),
       // '~webplatform-ui/assets/css/material-design-iconic-font.css': resolve(__dirname, 'assets/css/material-design-iconic-font.css')
     }
   },
@@ -50,32 +50,18 @@ module.exports = {
           {
             loader: 'style-loader',
           },
-          // {
-          //   loader: MiniCssExtractPlugin.loader,
-          //   options: {
-          //     publicPath: '/',
-          //     hmr: devMode,
-          //     sourceMap: true,
-          //   },
-          // },
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '/',
+              hmr: devMode,
+              sourceMap: true,
+            },
+          },
           {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              // url: (url, resourcePath) => {
-              //   if (url.indexOf('webplatform-ui') > -1) {
-              //     return false;
-              //   }
-
-              //   return true;
-              // },
-              // import: (parsedImport, resourcePath) => {
-              //   if (parsedImport.url.indexOf('webplatform-ui') > -1) {
-              //     return false;
-              //   }
-
-              //   return true;
-              // },
             }
           },
           {
@@ -84,18 +70,10 @@ module.exports = {
               implementation: require("sass"),
               sourceMap: true,
               data: '@import \'./assets/scss/global-variables.scss\';',
-              // includePaths: [
-              //   resolve(__dirname, 'node_modules/'),
-              //   // resolve(__dirname, 'assets/css/material-design-iconic-font.css')
-              // ],
             }
           },
         ],
       },
-      // {
-      //   test: /\.(png|ico|jpg)$/,
-      //   use: 'url-loader'
-      // },
       {
         test   : /\.(ttf|eot|svg|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         loader : 'file-loader?name=fonts/[name].[ext]'

@@ -6,6 +6,7 @@ import Waves from 'node-waves'
 
 import { Router, History, Utils } from './index'
 
+import routes from './routes'
 import AppContainer from './containers/AppContainer'
 
 const history = History.setHistory()
@@ -19,7 +20,7 @@ Waves.init()
 const App = () => {
   return (
     <Provider store={ store }>
-      <AppContainer history={history} />
+      <Router routes={routes} history={history} container={AppContainer} />
     </Provider>
   )
 }

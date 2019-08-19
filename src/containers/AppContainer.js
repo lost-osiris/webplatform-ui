@@ -59,7 +59,12 @@ export class AppContainer extends React.Component {
       let component = props.layout.ui[k]
 
       if (component) {
-        promises.push(component())
+        if (component instanceof Promise) {
+          promises.push(component())
+        } else {
+          promises.push(component)
+        }
+
         map[count] = k
         count++
       }
@@ -94,11 +99,7 @@ export class AppContainer extends React.Component {
       newProps.location = this.props.location
     }
 
-    return (
-      <div>
-        <Layout {...newProps} />
-      </div>
-    )
+    return <Layout {...newProps} />
   }
 }
 

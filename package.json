@@ -59,7 +59,8 @@
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "webplatform-ui": "^1.4.0"
   },
   "dependencies": {
     "@loadable/component": "^5.10.2",
