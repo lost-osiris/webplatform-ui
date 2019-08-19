@@ -17,15 +17,8 @@ module.exports = {
   mode: 'development',
   devtool: 'eval-source-map',
   resolve: {
-    // modules: [
-      // '~webplatform-ui': resolve(__dirname, 'assets/')
-    // ],
     alias: {
-      // '~webplatform': resolve(__dirname, '/')
-      // 'webplatform-ui': resolve(__dirname, 'assets/'),
-      // '~webplatform-ui': resolve(__dirname, 'node_modules'),
       '~': resolve(__dirname, 'src'),
-      // '~webplatform-ui/assets/css/material-design-iconic-font.css': resolve(__dirname, 'assets/css/material-design-iconic-font.css')
     }
   },
   module: {
