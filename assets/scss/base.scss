@@ -1,34 +1,6 @@
 // Variables
 @import "animate";
 
-// Bootstrap overrides
-@import "bootstrap-overrides/dropdown";
-@import "bootstrap-overrides/progress";
-@import "bootstrap-overrides/card";
-@import "bootstrap-overrides/buttons";
-@import "bootstrap-overrides/tables";
-@import "bootstrap-overrides/forms";
-@import "bootstrap-overrides/input-groups";
-@import "bootstrap-overrides/custom-forms";
-@import "bootstrap-overrides/pagination";
-@import "bootstrap-overrides/alerts";
-@import "bootstrap-overrides/close";
-@import "bootstrap-overrides/breadcrumbs";
-@import "bootstrap-overrides/collapse";
-@import "bootstrap-overrides/carousel";
-@import "bootstrap-overrides/modal";
-@import "bootstrap-overrides/popovers";
-@import "bootstrap-overrides/tabs";
-@import "bootstrap-overrides/tooltip";
-
-// Vendors
-@import "~flatpickr/dist/flatpickr.css";
-
-// Vendor overrides
-@import "vendor-overrides/flatpickr";
-@import "vendor-overrides/sweetalert2";
-@import "vendor-overrides/Waves";
-
 // Fonts
 @import "~font-awesome/css/font-awesome.css";
 @import "~webplatform-ui/assets/css/material-design-iconic-font.css";
@@ -40,3 +12,12 @@
 @import "core";
 @import "page-loader";
 @import "theme";
+
+
+// Vendors
+@import "~flatpickr/dist/flatpickr.css";
+
+// Vendor overrides
+@import "vendor-overrides/flatpickr";
+@import "vendor-overrides/sweetalert2";
+@import "vendor-overrides/Waves";

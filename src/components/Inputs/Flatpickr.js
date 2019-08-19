@@ -53,6 +53,10 @@ export default class Datetime extends Component {
       onChange: (date, strDate, instance) => this.handleChange(date, strDate, instance),
       onClose: (date, strDate, instance) => this.handleClose(date, strDate, instance),
       dateFormat: dateFormat,
+      enableTime: false,
+      monthSelectorType: 'static',
+      nextArrow: '<i class="zmdi zmdi-long-arrow-right" />',
+      prevArrow: '<i class="zmdi zmdi-long-arrow-left" />',
       ...rest
     }
   }
@@ -112,6 +116,7 @@ export default class Datetime extends Component {
         className="form-control"
         ref={e => this.node = e}
         placeholder={placeholderText}
+        data-input
       />
     )
   }

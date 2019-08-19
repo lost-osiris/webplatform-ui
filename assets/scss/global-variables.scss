@@ -1,6 +1,7 @@
 // Mixins
 @import "mixins/mixins";
 
+
 // Options
 $font-path: "~webplatform-ui/assets/fonts" !default;
 $enable-transitions: true;
@@ -347,5 +348,27 @@ $btn-border-width: 2px;
 $accordion-border-color: #eee;
 $accordion-padding: 0.85rem 1.35rem;
 
+
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+
+// Bootstrap overrides
+@import "bootstrap-overrides/dropdown";
+@import "bootstrap-overrides/progress";
+@import "bootstrap-overrides/card";
+@import "bootstrap-overrides/buttons";
+@import "bootstrap-overrides/tables";
+@import "bootstrap-overrides/forms";
+@import "bootstrap-overrides/input-groups";
+@import "bootstrap-overrides/custom-forms";
+@import "bootstrap-overrides/pagination";
+@import "bootstrap-overrides/alerts";
+@import "bootstrap-overrides/close";
+@import "bootstrap-overrides/breadcrumbs";
+@import "bootstrap-overrides/collapse";
+@import "bootstrap-overrides/carousel";
+@import "bootstrap-overrides/modal";
+@import "bootstrap-overrides/popovers";
+@import "bootstrap-overrides/tabs";
+@import "bootstrap-overrides/tooltip";

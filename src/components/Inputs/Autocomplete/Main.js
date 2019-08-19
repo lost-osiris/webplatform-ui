@@ -24,9 +24,13 @@ class Autocomplete extends Component {
     }
 
     this.utils = new Utils()
+    
+    // this.input = React.createRef()
   }
 
   componentDidMount() {
+    // this.input = React.createRef()
+
     let selfManaged = !this.props.form && !this.props.id
     
     let action = {
@@ -160,8 +164,6 @@ class Autocomplete extends Component {
       this.handleEvent({searchText: data, toggled: true})
     }
 
-    this.input = React.createRef()
-
     let containerProps = {
       ...this.props,
       toggled: this.state.toggled,
@@ -205,7 +207,7 @@ class Autocomplete extends Component {
     return (
       <div className="twitter-typeahead fg-toggled">
         <Text
-          ref={ this.input }
+          // ref={ this.input }
           type="text"
           onFocus={ handleFocus }
           onChange={ handleChange }

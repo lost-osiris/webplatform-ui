@@ -17,9 +17,13 @@ class AutocompleteContainer extends Component {
       minSearch: props.minSearch || 2,
       limit: props.limit || 15
     }
+    
+    this.input = React.createRef()
   }
 
   componentDidMount() {
+    this.input = React.createRef()
+
     let state = {
       normalizedData: this.normalize(this.props.searchKey, this.props.data),
       rawData: this.props.data,
@@ -121,8 +125,6 @@ class AutocompleteContainer extends Component {
   }
 
   render() {
-
-    this.input = React.createRef()
 
     let containerProps = {
       data: this.state.normalizedData,

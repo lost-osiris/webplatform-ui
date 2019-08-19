@@ -75,11 +75,11 @@ class Button extends Component {
     const {disabled, style, type} = this.props
 
     //Ref to be used for locating button, primarily used in DropDown.js
-    let ref = this.saveRef
+    // let ref = this.saveRef
 
-    if (this.props.handleRef) {
-      ref = this.props.handleRef
-    }
+    // if (this.props.handleRef) {
+    //   ref = this.props.handleRef
+    // }
 
     //Account for scaling icon when bigger button is used with "float"
     // let iconStyle = {'fontSize': 16.2}
@@ -101,7 +101,7 @@ class Button extends Component {
         onClick={(event) => this.handleClick(event)}
         style={style}
         type={type || 'button'}
-        ref={ref}
+        // ref={ref}
       >
         {(this.props.icon && this.props.icon != true) &&
           <i className={this.props.icon} style={iconStyle} />
