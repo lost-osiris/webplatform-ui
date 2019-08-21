@@ -16,6 +16,7 @@
     "assets/*"
   ],
   "devDependencies": {
+    "@app-init/ui": "^1.0.0",
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
@@ -59,8 +60,7 @@
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1",
-    "webpack-node-externals": "^1.7.2",
-    "webplatform-ui": "^1.4.0"
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "@loadable/component": "^5.10.2",
