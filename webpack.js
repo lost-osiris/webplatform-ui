@@ -80,7 +80,7 @@ module.exports = {
       chunkFilename: '[hash].css',
     }),
     new HtmlWebpackPlugin({
-      title: 'Webplatform',
+      title: 'App Init',
       template: '../template.html',
       chunksSortMode: 'none'
     }),

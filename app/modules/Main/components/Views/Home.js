@@ -8,7 +8,7 @@ export default class Welcome extends Component {
   render() {
     return (
       <div className="row">
-        <h1>Welcome to webplatform-ui</h1>
+        <h1>Welcome to App-Init UI</h1>
       </div>
     )
   }

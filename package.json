@@ -1,8 +1,8 @@
 {
-  "name": "webplatform-ui",
-  "version": "1.4.7",
-  "main": "src/webplatform-ui.js",
-  "repository": "https://github.com/lost-osiris/webplatform-ui",
+  "name": "@app-init/ui",
+  "version": "1.0.0",
+  "main": "src/app-init-ui.js",
+  "repository": "https://github.com/app-init/ui",
   "author": "Matthew Owens",
   "license": "MIT",
   "private": false,
