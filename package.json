@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@loadable/component": "^5.10.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "flatpickr": "^4.6.2",
